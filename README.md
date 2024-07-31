@@ -32,6 +32,8 @@ i.e. if you're using `zsh` shell Add the following line at the end of the ~/.zsh
 
 Once the hook is configured, restart your shell for direnv to be activated. for more info browse the following link: https://github.com/direnv/direnv/blob/master/docs/hook.md
 
+<<<>>>UPDATE END<<<>>>
+
 Niet alle databases worden automatisch aangemaakt. De Ory services hebben een lege database nodig voor ze van start kunnen met de migraties. Start daarom eerst de database alleen op en run de opvolgende commando's om de databases aan te maken.
 
 ```
@@ -54,6 +56,8 @@ Na aanmaken van de databases kan je de identity server opstarten met `docker com
 
 Note : If you get the `nuget restore error NU1301` error while performing `docker compose up -d identity_ui`. Open docker desktop, and go to setting then docker engine tab and add the "dns": ["8.8.8.8"] in the docker settings.
 
+<<<>>>UPDATE END<<<>>>
+
 Start vervolgens de backend op in de Backend folder `dotnet run`. _Backend werkt helaas momenteel niet via docker compose_. Start als laatste de backoffice op vanuit backoffice-web: `yarn start`.
 
 Open je browser in http://127.0.0.1:3000. Zie je het login scherm? Gefeliciteerd, je kan aan de slag. Er zijn een aantal gebruikers aangemaakt. De uitnodigingen kan je in de mailbox vinden: http://localhost:4436.
@@ -69,7 +73,7 @@ Voor een opgezet project voldoet het om 3 commando's te gebruiken:
 - `yarn start` (in `backoffice-web`)
   Hiermee start je de volledige infrastructuur op.
 
-<<<>>>UPDATE<<<>>>
+<<<>>>UPDATE START<<<>>>
 
 Note: If the backoffice-web is still not functioning and you receive a "This page isn’t working" error when accessing http://127.0.0.1:3000 in your web browser, you may need to manually restart the identity_ui-1 service. To do this, follow these steps:
 
@@ -77,6 +81,8 @@ Note: If the backoffice-web is still not functioning and you receive a "This pag
 2. In the terminal, navigate to the Identity folder within the project directory.
 3. Execute the command dotnet run to manually restart the identity_ui-1 service.
    After completing these steps, attempt to re-run the backoffice-web service and verify if the issue has been resolved.
+
+<<<>>>UPDATE END<<<>>>
 
 Soms zijn er veranderingen in de OAuth client, nadat je het project al hebt draaien. De seeder van Identity maakt clients automatisch aan, mits ze nog niet bestaan. Als er aanpassingen zijn geweest, verwijder de client dan handmatig:
 
