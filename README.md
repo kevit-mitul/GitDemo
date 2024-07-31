@@ -21,14 +21,14 @@ Alle HTTP requests die de frontend nodig heeft worden via OpenApi gegenereerd. D
 
 Voor je begint, kopieer de `.envrc.example` naar `.envrc`, pas de `MountPath` aan naar een directory naar keuze (hier worden geuploade bestanden opgeslagen) en gebruik `direnv allow`.
 
-Note : `direnv allow` export all the env variable from the `.envrc` file to system environments. if `direnv allow` works successfully it prints out all the exported variables in the terminal. if it doesn't print anything you need to hook it into the shell you're using.  
+Note : `direnv allow` export all the env variable from the `.envrc` file to system environments. if `direnv allow` works successfully it prints out all the exported variables in the terminal. if it doesn't print anything in your terminal. you need to hook it into the shell you're using.  
 i.e. if you're using `zsh` shell Add the following line at the end of the ~/.zshrc file: It will hook direnv to shell when the shell starts.
 
 ```
 `eval "$(direnv hook zsh)"`
 ```
 
-Once the hook is configured, restart your shell for direnv to be activated. for more info browse https://github.com/direnv/direnv/blob/master/docs/hook.md
+Once the hook is configured, restart your shell for direnv to be activated. for more info browse the following link: https://github.com/direnv/direnv/blob/master/docs/hook.md
 
 Niet alle databases worden automatisch aangemaakt. De Ory services hebben een lege database nodig voor ze van start kunnen met de migraties. Start daarom eerst de database alleen op en run de opvolgende commando's om de databases aan te maken.
 
