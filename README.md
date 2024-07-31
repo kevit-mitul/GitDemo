@@ -52,7 +52,7 @@ Na aanmaken van de databases kan je de identity server opstarten met `docker com
 4. smtp
 5. db
 
-<<<>>>UPDATE START<<<>>>
+<<<>>>UPDATE START <<<>>>
 
 Note : If you get the `nuget restore error NU1301` error while performing `docker compose up -d identity_ui`. Open docker desktop, and go to setting then docker engine tab and add the "dns": ["8.8.8.8"] in the docker settings.
 
