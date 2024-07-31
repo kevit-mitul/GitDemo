@@ -23,7 +23,6 @@ Voor je begint, kopieer de `.envrc.example` naar `.envrc`, pas de `MountPath` aa
 
 <<<>>>UPDATE<<<>>>
 
-
 Note : `direnv allow` export all the env variable from the `.envrc` file to system environments. if `direnv allow` works successfully it prints out all the exported variables in the terminal. if it doesn't print anything in your terminal. you need to hook it into the shell you're using.  
 i.e. if you're using `zsh` shell Add the following line at the end of the ~/.zshrc file: It will hook direnv to shell when the shell starts.
 
@@ -51,12 +50,11 @@ Na aanmaken van de databases kan je de identity server opstarten met `docker com
 4. smtp
 5. db
 
-
 <<<>>>UPDATE<<<>>>
 
 Note : If you get the `nuget restore error NU1301` error while performing `docker compose up -d identity_ui`. Open docker desktop, and go to setting then docker engine tab and add the "dns": ["8.8.8.8"] in the docker settings.
 
-Start vervolgens de backend op in de Backend folder `dotnet run`. _Backend werkt helaas momenteel niet via docker-compose_. Start als laatste de backoffice op vanuit backoffice-web: `yarn start`.
+Start vervolgens de backend op in de Backend folder `dotnet run`. _Backend werkt helaas momenteel niet via docker compose_. Start als laatste de backoffice op vanuit backoffice-web: `yarn start`.
 
 Open je browser in http://127.0.0.1:3000. Zie je het login scherm? Gefeliciteerd, je kan aan de slag. Er zijn een aantal gebruikers aangemaakt. De uitnodigingen kan je in de mailbox vinden: http://localhost:4436.
 
@@ -94,9 +92,9 @@ Ons identiteits systeem is gebouwd op de services van Ory, specifiek [Kratos](ht
 - Hydra is een service wat het hele OIDC protocol verzorgt. Het stuurt de gebruiker heen en weer naar pagina's waar hij moet wezen om het inloggen voor elkaar te krijgen. Het voert niet zelf het inloggen uit, maar laat dit over aan het systeem waaraan het gekoppeld wordt.
   Beide services van Ory zijn losstaand van elkaar met als enige overeenkomst dat ze te maken hebben met het authenticeren van gebruikers. Dit houdt ook in dat we wat werk moeten doen om ze samen te laten werken.
 
-De flows die nodig zijn staan goed beschreven op hun website. Je moet je alleen indenken dat als je kijkt naar de [Login flow van Hydra](https://www.ory.sh/hydra/docs/concepts/login) dat het stukje "Authenticates user with credentials" vervangen moet [de login flow van Kratos](https://www.ory.sh/kratos/docs/self-service/flows/user-login). Details zijn het beste te vinden door de documentatie te bestuderen. Onthoud voor ons dat het inlogsysteem uit 3 componenten bestaat Kratos (identity in docker-compose), Hydra (oidc in docker-compose) en Identity (identity_ui in docker-compose). Hierbij moet Identity worden gezien als de lijm tussen Kratos en Hydra, want deze bepaald wanneer er naar wie doorverwezen moet worden.
+De flows die nodig zijn staan goed beschreven op hun website. Je moet je alleen indenken dat als je kijkt naar de [Login flow van Hydra](https://www.ory.sh/hydra/docs/concepts/login) dat het stukje "Authenticates user with credentials" vervangen moet [de login flow van Kratos](https://www.ory.sh/kratos/docs/self-service/flows/user-login). Details zijn het beste te vinden door de documentatie te bestuderen. Onthoud voor ons dat het inlogsysteem uit 3 componenten bestaat Kratos (identity in docker compose), Hydra (oidc in docker compose) en Identity (identity_ui in docker compose). Hierbij moet Identity worden gezien als de lijm tussen Kratos en Hydra, want deze bepaald wanneer er naar wie doorverwezen moet worden.
 
-Mocht je Identity lokaal willen draaien, pas dan de kratos.yml aan. Hierin staat de admin.base_url naar http://identity:4434/ (de docker-compose service). Wanneer je Identity zonder docker draait zal deze niet gevonden kunnen worden. Verander het daarom naar http://127.0.0.1:4434/ (of verander je hosts file om identity -> 127.0.0.1 te laten wijzen).
+Mocht je Identity lokaal willen draaien, pas dan de kratos.yml aan. Hierin staat de admin.base_url naar http://identity:4434/ (de docker compose service). Wanneer je Identity zonder docker draait zal deze niet gevonden kunnen worden. Verander het daarom naar http://127.0.0.1:4434/ (of verander je hosts file om identity -> 127.0.0.1 te laten wijzen).
 
 ## Data import
 
