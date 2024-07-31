@@ -21,6 +21,9 @@ Alle HTTP requests die de frontend nodig heeft worden via OpenApi gegenereerd. D
 
 Voor je begint, kopieer de `.envrc.example` naar `.envrc`, pas de `MountPath` aan naar een directory naar keuze (hier worden geuploade bestanden opgeslagen) en gebruik `direnv allow`.
 
+<<<>>>UPDATE<<<>>>
+
+
 Note : `direnv allow` export all the env variable from the `.envrc` file to system environments. if `direnv allow` works successfully it prints out all the exported variables in the terminal. if it doesn't print anything in your terminal. you need to hook it into the shell you're using.  
 i.e. if you're using `zsh` shell Add the following line at the end of the ~/.zshrc file: It will hook direnv to shell when the shell starts.
 
@@ -48,6 +51,9 @@ Na aanmaken van de databases kan je de identity server opstarten met `docker com
 4. smtp
 5. db
 
+
+<<<>>>UPDATE<<<>>>
+
 Note : If you get the `nuget restore error NU1301` error while performing `docker compose up -d identity_ui`. Open docker desktop, and go to setting then docker engine tab and add the "dns": ["8.8.8.8"] in the docker settings.
 
 Start vervolgens de backend op in de Backend folder `dotnet run`. _Backend werkt helaas momenteel niet via docker-compose_. Start als laatste de backoffice op vanuit backoffice-web: `yarn start`.
@@ -64,6 +70,8 @@ Voor een opgezet project voldoet het om 3 commando's te gebruiken:
 - `dotnet run` (in `Backend`)
 - `yarn start` (in `backoffice-web`)
   Hiermee start je de volledige infrastructuur op.
+
+<<<>>>UPDATE<<<>>>
 
 Note: If the backoffice-web is still not functioning and you receive a "This page isn’t working" error when accessing http://127.0.0.1:3000 in your web browser, you may need to manually restart the identity_ui-1 service. To do this, follow these steps:
 
